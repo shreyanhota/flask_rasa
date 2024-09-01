@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles_rasa.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="chatbox">
+            <div class="chatbox-header">
+                <h1>Travel Chatbot</h1>
+                <div class="social-links">
+                    <a href="https://twitter.com" target="_blank">Twitter</a>
+                    <a href="https://facebook.com" target="_blank">Facebook</a>
+                </div>
+            </div>
+            <div class="chatbox-body" id="chatboxBody">
+                <div id="messages"></div>
+            </div>
+            <div class="chatbox-footer">
+                <input type="text" id="userInput" placeholder="Type your message here..." onkeydown="if(event.key === 'Enter'){sendMessage();}">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function sendMessage() {
+            const input = document.getElementById('userInput').value;
+            const chatbox = document.getElementById('chatbox');
+
+            if (input) {
+                const userMessage = document.createElement('div');
+                userMessage.className = 'user-message';
+                userMessage.textContent = input;
+                chatbox.appendChild(userMessage);
+
+                // Send the message to Flask server
+                fetch('/webhook', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message: input })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    const botMessage = document.createElement('div');
+                    botMessage.className = 'bot-message';
+                    botMessage.textContent = data.message;  // The bot's response text
+                    chatbox.appendChild(botMessage);
+
+                    // Clear the input box after the message is sent
+                    document.getElementById('userInput').value = '';
+                    chatbox.scrollTop = chatbox.scrollHeight; // Scroll to the bottom
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    const botMessage = document.createElement('div');
+                    botMessage.className = 'bot-message';
+                    botMessage.textContent = 'There was an error processing your request.';
+                    chatbox.appendChild(botMessage);
+                });
+            }
+        }
+    </script>
+</body>
+</html>

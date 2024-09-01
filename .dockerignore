@@ -1,0 +1,4 @@
+
+# Ignore the .rasa directory
+.rasa
+

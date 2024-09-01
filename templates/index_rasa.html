@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Travel Companion</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles_rasa.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Indie+Flower&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">AI Travel Companion</div>
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank">Facebook</a>
+                <a href="https://twitter.com" target="_blank">Twitter</a>
+                <a href="https://instagram.com" target="_blank">Instagram</a>
+            </div>
+        </header>
+
+      
+
+        <div class="chatbot-container">
+			
+			<div id="chatbot">
+				<div id="chatbox"></div>
+				<input type="text" id="userInput" placeholder="Type your message here..." onkeydown="if(event.key === 'Enter'){sendMessage();}">
+				<button onclick="sendMessage()">Send</button>
+			</div>
+			
+        </div>
+    </div>
+
+    <script>
+        function sendMessage() {
+            const input = document.getElementById('userInput').value;
+            const chatbox = document.getElementById('chatbox');
+			
+			// Clear the input box after the message is stored
+			document.getElementById('userInput').value = '';
+
+            if (input) {
+                const userMessage = document.createElement('div');
+                userMessage.className = 'user-message';
+                userMessage.textContent = input;
+                chatbox.appendChild(userMessage);
+
+                // Send the message to Flask server
+                fetch('/webhook', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message: input })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    const botMessage = document.createElement('div');
+                    botMessage.className = 'bot-message';
+                    botMessage.textContent = data.message;  // The bot's response text
+                    chatbox.appendChild(botMessage);
+
+                    // Clear the input box after the message is sent
+                    <!-- document.getElementById('userInput').value = ''; -->
+                    chatbox.scrollTop = chatbox.scrollHeight; // Scroll to the bottom
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    const botMessage = document.createElement('div');
+                    botMessage.className = 'bot-message';
+                    botMessage.textContent = 'There was an error processing your request.';
+                    chatbox.appendChild(botMessage);
+                });
+            }
+        }
+		
+		
+		
+    </script>
+</body>
+</html>
