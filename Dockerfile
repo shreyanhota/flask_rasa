@@ -23,8 +23,9 @@ EXPOSE 5006
 
 # CMD ["sh", "-c", "python app_rasa.py"]
 
-CMD ["sh", "-c", "sleep 60 && python app_rasa.py"]
+# CMD ["sh", "-c", "sleep 60 && python app_rasa.py"]
 
+RUN sh -c "python app_rasa.py"
 
 
 
