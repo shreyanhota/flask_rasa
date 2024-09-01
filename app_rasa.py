@@ -4,7 +4,7 @@ import requests
 app = Flask(__name__)
 
 # Rasa server URL
-RASA_URL = "http://localhost:5005/webhooks/rest/webhook"
+RASA_URL = "https://rasa-bot2-actions.onrender.com/webhooks/rest/webhook"
 
 
 @app.route('/')
