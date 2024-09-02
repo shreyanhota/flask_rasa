@@ -19,7 +19,12 @@ EXPOSE 5006
 
 # CMD ["sh", "-c", "sleep 60 && python app_rasa.py"]
 
-CMD ["sh", "-c", "sleep 60 && python app_rasa.py"]
+# CMD ["sh", "-c", "python app_rasa.py"]
+
+# ENTRYPOINT ["rasa"]
+# CMD ["run", "--port", "5005", "--enable-api"]
+
+CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5006", "app_rasa:app"]
 
 
 
