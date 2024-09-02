@@ -14,7 +14,7 @@ USER root
 # Copy any additional custom requirements, if necessary (uncomment next line)
 RUN pip install --no-cache-dir flask requests
 
-USER 1001
+
 
 # Expose ports for flask  server
 EXPOSE 5006
