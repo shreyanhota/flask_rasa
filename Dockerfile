@@ -7,14 +7,8 @@ USER root
 # Copy your flask project files into the container
 COPY . /app
 
-USER root
-
-
-
 # Copy any additional custom requirements, if necessary (uncomment next line)
 RUN pip install --no-cache-dir flask requests
-
-
 
 # Expose ports for flask  server
 EXPOSE 5006
