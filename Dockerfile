@@ -8,7 +8,7 @@ USER root
 COPY . /app
 
 # Copy any additional custom requirements, if necessary (uncomment next line)
-RUN pip install --no-cache-dir flask requests
+RUN pip install --no-cache-dir flask requests gunicorn
 
 # Expose ports for flask  server
 EXPOSE 5006
