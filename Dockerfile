@@ -23,8 +23,12 @@ EXPOSE 5006
 
 # ENTRYPOINT ["rasa"]
 # CMD ["run", "--port", "5005", "--enable-api"]
-ENV PATH="/usr/local/python3/bin:${PATH}"
-CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5006", "app_rasa:app"]
+
+CMD ["python", "app_rasa.py"]
+
+
+# ENV PATH="/usr/local/python3/bin:${PATH}"
+# CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5006", "app_rasa:app"]
 
 
 
