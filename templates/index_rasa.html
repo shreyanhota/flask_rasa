@@ -1,14 +1,53 @@
+ <!--
+<!DOCTYPE html>
+<html lang="en">
+<body>
+ <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+ <link rel="stylesheet" href="{{ url_for('static', filename='css/styles_rasa.css') }}">
+ <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <img class="image" src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" draggable="false" />
+  <img class="image" src="https://images.unsplash.com/photo-1610194352361-4c81a6a8967e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80" draggable="false" />
+  <img class="image" src="https://images.unsplash.com/photo-1618202133208-2907bebba9e1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" draggable="false" />
+  <img class="image" src="https://images.unsplash.com/photo-1495805442109-bf1cf975750b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" draggable="false" />
+  <img class="image" src="https://images.unsplash.com/photo-1548021682-1720ed403a5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" draggable="false" />
+  <img class="image" src="https://images.unsplash.com/photo-1496753480864-3e588e0269b3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2134&q=80" draggable="false" />
+  <img class="image" src="https://images.unsplash.com/photo-1613346945084-35cccc812dd5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1759&q=80" draggable="false" />
+  <img class="image" src="https://images.unsplash.com/photo-1516681100942-77d8e7f9dd97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" draggable="false" />
+</div>
+
+<a id="source-link" class="meta-link" href="https://camillemormal.com" target="_blank">
+  <i class="fa-solid fa-link"></i>
+  <span>Source</span>
+</a>
+
+<a id="yt-link" class="meta-link" href="https://youtu.be/PkADl0HubMY" target="_blank">
+  <i class="fa-brands fa-youtube"></i>
+  <span>7 min tutorial</span>
+</a>
+</body>
+</html>
+
+
+-->
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Travel Companion</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles_rasa.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles_rasa.css') }}"> <!-- CSS CONNECTION -->
+	
+	
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Indie+Flower&display=swap" rel="stylesheet">
     
 </head>
 <body>
+	
     <div class="container">
         <header>
             <div class="logo">AI Travel Companion</div>
@@ -19,12 +58,26 @@
             </div>
         </header>
 
-      
+<!-- CAROUSEL -->
+		<div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+		
+  <img class="image" src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" draggable="false" />
+  <img class="image" src="https://images.unsplash.com/photo-1610194352361-4c81a6a8967e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80" draggable="false" />
+  <img class="image" src="https://images.unsplash.com/photo-1618202133208-2907bebba9e1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" draggable="false" />
+  <img class="image" src="https://images.unsplash.com/photo-1495805442109-bf1cf975750b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" draggable="false" />
+  <img class="image" src="https://images.unsplash.com/photo-1548021682-1720ed403a5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" draggable="false" />
+  <img class="image" src="https://images.unsplash.com/photo-1496753480864-3e588e0269b3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2134&q=80" draggable="false" />
+  <img class="image" src="https://images.unsplash.com/photo-1613346945084-35cccc812dd5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1759&q=80" draggable="false" />
+  <img class="image" src="https://images.unsplash.com/photo-1516681100942-77d8e7f9dd97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" draggable="false" />
+</div>
+
+<!--CHATBOX-->
 
         <div class="chatbot-container">
 			
 			<div id="chatbot">
 				<div id="chatbox"></div>
+				
 				<input type="text" id="userInput" placeholder="Type your message here..." onkeydown="if(event.key === 'Enter'){sendMessage();}">
 				<button onclick="sendMessage()">Send</button>
 			</div>
@@ -32,51 +85,12 @@
         </div>
     </div>
 
-    <script>
-        function sendMessage() {
-            const input = document.getElementById('userInput').value;
-            const chatbox = document.getElementById('chatbox');
-			
-			// Clear the input box after the message is stored
-			document.getElementById('userInput').value = '';
 
-            if (input) {
-                const userMessage = document.createElement('div');
-                userMessage.className = 'user-message';
-                userMessage.textContent = input;
-                chatbox.appendChild(userMessage);
-
-                // Send the message to Flask server
-                fetch('/webhook', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ message: input })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    const botMessage = document.createElement('div');
-                    botMessage.className = 'bot-message';
-                    botMessage.textContent = data.message;  // The bot's response text
-                    chatbox.appendChild(botMessage);
-
-                    // Clear the input box after the message is sent
-                    <!-- document.getElementById('userInput').value = ''; -->
-                    chatbox.scrollTop = chatbox.scrollHeight; // Scroll to the bottom
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    const botMessage = document.createElement('div');
-                    botMessage.className = 'bot-message';
-                    botMessage.textContent = 'There was an error processing your request.';
-                    chatbox.appendChild(botMessage);
-                });
-            }
-        }
-		
-		
-		
-    </script>
+<!--JS for server to RASA, listens on flask's (5006) port's webhook for POST messages from RASA 5005 server (which itself listens to RASA actions server 5055) -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
+
+
+<!-- <div src="https://travthai-spacy.onrender.com" width="100vw" height="100vh" frameborder="0" style="display: block; border:0; overflow:hidden;" frameborder="0" allowfullscreen></div> -->
+
